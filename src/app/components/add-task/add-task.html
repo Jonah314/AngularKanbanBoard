@@ -1,1 +1,24 @@
 <p>add-task works!</p>
+<div class="add-task-container">
+  <form [formGroup]="taskForm" (ngSubmit)="submit()">
+
+    <input type="text" placeholder="Task Title" formControlName="title" />
+
+    <textarea placeholder="Description" formControlName="description"></textarea>
+
+    <select formControlName="priority">
+      <option value="low">Low</option>
+      <option value="medium">Medium</option>
+      <option value="high">High</option>
+    </select>
+
+    <select formControlName="status">
+      <option value="todo">To Do</option>
+      <option value="in-progress">In Progress</option>
+      <option value="done">Done</option>
+    </select>
+
+    <button type="submit">Add Task</button>
+
+  </form>
+</div>

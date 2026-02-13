@@ -1,1 +1,30 @@
-<p>board works!</p>
+<div class="board-container">
+
+  <div class="column">
+    <h2>To Do</h2>
+    @for (task of todoTasks(); track task.id) {
+        <div class="task-card">
+            {{ task.title }}
+        </div>
+    }
+  </div>
+
+  <div class="column">
+    <h2>In Progress</h2>
+    @for (task of inProgressTasks(); track task.id) {
+        <div class="task-card">
+            {{ task.title }}
+        </div>
+    }
+  </div>
+
+  <div class="column">
+    <h2>Done</h2>
+    @for (task of doneTasks(); track task.id) {
+        <div class="task-card">
+            {{ task.title }}
+        </div>
+    }
+  </div>
+
+</div>
