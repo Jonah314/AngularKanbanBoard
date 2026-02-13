@@ -1,29 +1,65 @@
 <div class="board-container">
 
-  <div class="column">
+  <!-- TODO -->
+  <div
+    class="column"
+    cdkDropList
+    #todoList="cdkDropList"
+    [cdkDropListConnectedTo]="[progressList, doneList]"
+    (cdkDropListDropped)="drop($event, 'todo')"
+  >
     <h2>To Do</h2>
+
     @for (task of todoTasks(); track task.id) {
-        <div class="task-card">
-            {{ task.title }}
-        </div>
+      <div
+        class="task-card"
+        cdkDrag
+        [cdkDragData]="task"
+      >
+        {{ task.title }}
+      </div>
     }
   </div>
 
-  <div class="column">
+  <!-- IN PROGRESS -->
+  <div
+    class="column"
+    cdkDropList
+    #progressList="cdkDropList"
+    [cdkDropListConnectedTo]="[todoList, doneList]"
+    (cdkDropListDropped)="drop($event, 'in-progress')"
+  >
     <h2>In Progress</h2>
+
     @for (task of inProgressTasks(); track task.id) {
-        <div class="task-card">
-            {{ task.title }}
-        </div>
+      <div
+        class="task-card"
+        cdkDrag
+        [cdkDragData]="task"
+      >
+        {{ task.title }}
+      </div>
     }
   </div>
 
-  <div class="column">
+  <!-- DONE -->
+  <div
+    class="column"
+    cdkDropList
+    #doneList="cdkDropList"
+    [cdkDropListConnectedTo]="[todoList, progressList]"
+    (cdkDropListDropped)="drop($event, 'done')"
+  >
     <h2>Done</h2>
+
     @for (task of doneTasks(); track task.id) {
-        <div class="task-card">
-            {{ task.title }}
-        </div>
+      <div
+        class="task-card"
+        cdkDrag
+        [cdkDragData]="task"
+      >
+        {{ task.title }}
+      </div>
     }
   </div>
 

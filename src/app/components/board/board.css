@@ -4,7 +4,7 @@
   gap: 2rem;
   padding: 2rem;
   background: rgb(234, 224, 207);
-  min-height: 70vh;
+  min-height: 60vh;
 }
 
 .column {
@@ -35,4 +35,17 @@
 
 .task-card:hover {
   transform: translateY(-4px);
+}
+
+.cdk-drag-preview {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  border-radius: 8px;
+}
+
+.cdk-drag-placeholder {
+  opacity: 0.4;
+}
+
+.cdk-drop-list-dragging .task-card {
+  transition: transform 0.2s ease;
 }
