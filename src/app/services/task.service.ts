@@ -22,7 +22,7 @@ export class TaskService {
     'Implement Task Service',
     'Make state reactive using signals',
     'high',
-    'in-progress'
+    'todo'
   );
 
   const task3 = new Task(
@@ -33,10 +33,19 @@ export class TaskService {
     'done'
   );
 
+  const task4 = new Task(
+    crypto.randomUUID(),
+    'Clean the Kitchen',
+    'Suprize wife for valentines',
+    'low',
+    'in-progress'
+  );
+
   this.tasks.set({
     [task1.id]: task1,
     [task2.id]: task2,
-    [task3.id]: task3
+    [task3.id]: task3,
+    [task4.id]: task4
   });
 }
 
@@ -101,4 +110,6 @@ export class TaskService {
     });
   }
 }
+
+export { Task };
 

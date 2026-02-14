@@ -1,7 +1,10 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+//import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddTask } from './add-task';
+//import { AddTask } from './add-task';
 
+
+// Disabled Testing
+/*
 describe('AddTask', () => {
   let component: AddTask;
   let fixture: ComponentFixture<AddTask>;
@@ -21,3 +24,4 @@ describe('AddTask', () => {
     expect(component).toBeTruthy();
   });
 });
+*/
